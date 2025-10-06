@@ -7,3 +7,5 @@ spack mirror add tutorial /mirror
 spack buildcache keys --install --trust
 spack bootstrap now
 spack compiler find
+
+export EDITOR=emacs
