@@ -28,11 +28,12 @@ class TutorialMpileaks(AutotoolsPackage):
     depends_on("callpath")
 
     def autoreconf(self, spec, prefix):
-        # FIXME: Modify the autoreconf method as necessary
         autoreconf("--install", "--verbose", "--force")
 
     def configure_args(self):
-        # FIXME: Add arguments other than --prefix
-        # FIXME: If not needed delete this function
-        args = []
+        args = [
+            f"--with-adept-utils={self.spec['adept-utils'].prefix}",
+            f"--with-callpath={self.spec['callpath'].prefix}",
+        ]
+
         return args
