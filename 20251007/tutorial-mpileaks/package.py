@@ -23,8 +23,9 @@ class TutorialMpileaks(AutotoolsPackage):
     depends_on("libtool", type="build")
     depends_on("m4", type="build")
 
-    # FIXME: Add additional dependencies if required.
-    # depends_on("foo")
+    depends_on("mpi")
+    depends_on("adept-utils")
+    depends_on("callpath")
 
     def autoreconf(self, spec, prefix):
         # FIXME: Modify the autoreconf method as necessary
